@@ -80,7 +80,7 @@ $(OBJ_DIR)/3rdparty/%.o: $(OBJ_DIR)/3rdparty/%.src
 $(TARGET): $(OBJS) | init
 	$(Q)echo [AR] $(notdir $@)
 	$(Q)$(AR) -r -c "$@" $(OBJS)
-	$(Q)$(LTC) --map-file -OtcxyL -lc -lfp -lrt -M -mcrfiklsmnoduq "$@" $(OBJS)
+	$(Q)$(LTC) --map-file -lc "$@" $(OBJS)
 	$(Q)echo Static library created: $(TARGET)
 	$(Q)echo Build completed.
 
